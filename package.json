@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "ts-node-dev server.ts",
     "build": "npx tsc",
-    "start": "node dist/server.js",
+    "start": "npx prisma db push && npx prisma db seed && node dist/server.js",
     "postinstall": "npx prisma generate && npx prisma db push"
+  },
+  "prisma": {
+    "seed": "npx ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
