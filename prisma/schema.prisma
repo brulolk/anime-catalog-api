@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// Essa é a nossa Tabela no Banco de Dados!
+model Character {
+  id        Int      @id @default(autoincrement())
+  name      String
+  anime     String
+  role      String
+  createdAt DateTime @default(now())
+}

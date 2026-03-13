@@ -1,0 +1,18 @@
+# 📦 Dependências (O Render baixa isso sozinho)
+node_modules/
+
+# 🏗️ Build / Código Compilado (O Render gera isso sozinho)
+dist/
+build/
+
+# 🗄️ Banco de Dados SQLite (Não queremos sobrescrever o banco da nuvem)
+*.db
+*.sqlite
+*.db-journal
+dev.db
+
+# 🔐 Variáveis de Ambiente (Segurança máxima, nunca suba suas senhas pro GitHub!)
+.env
+
+# 🍎 Lixo do macOS
+.DS_Store
