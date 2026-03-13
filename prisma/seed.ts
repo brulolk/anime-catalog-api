@@ -1,11 +1,8 @@
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '../src/database/prisma';
 
 async function main() {
     console.log("🌱 Iniciando o Seeding do banco de dados...");
 
-    // Limpa a tabela antes de popular (evita dados duplicados se rodar duas vezes)
     await prisma.character.deleteMany();
 
     const characters = [
@@ -26,7 +23,7 @@ async function main() {
 
 main()
     .catch((e) => {
-        console.error(e);
+        console.error("❌ Erro no seed:", e);
         process.exit(1);
     })
     .finally(async () => {
